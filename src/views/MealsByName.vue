@@ -9,23 +9,16 @@
       placeholder="Search for Meals" />
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div v-for="meal in meals" :key="meal.idMeal" class="bg-[#F9F8F8] cursor-pointer hover:scale-105 transition-all">
-        <img :src="meal.strMealThumb" alt="" class="object-cover">
-        <h3>{{ meal.strMeal }}</h3>
-        <p>{{meal.strArea}} food</p>
-        <div>
-          <a :href="meal.strYoutube" target="_blank">Youtube</a>
-        </div>
-      </div>
+      <meal-item v-for="meal in meals" :key="meal.idMeal" v-bind:meal="meal"/>
     </div>
   </div>
-
 </template>
 
 <script setup>
 import { ref, computed} from 'vue'
 import store from '../store'
 import { useRoute } from 'vue-router';
+import MealItem from '@/components/MealItem.vue';
 const route = useRoute();
 const key = ref('')
 const meals = computed(() => store.state.searchedMeals)
