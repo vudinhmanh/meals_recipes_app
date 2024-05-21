@@ -1,12 +1,20 @@
 <template>
-  <div class="bg-[#F9F8F8] hover:scale-105 transition-all">
+  <div class="bg-[#F9F8F8] hover:scale-105 transition-all w-full max-w-[400px] h-full rounded-2xl">
     <router-link :to="{ name: 'mealDetails', params: { id: meal.idMeal } }">
-      <img :src="meal.strMealThumb" alt="" class="object-cover">
+      <img :src="meal.strMealThumb" alt="" class="object-cover rounded-t-xl">
     </router-link>
-    <h3>{{ meal.strMeal }}</h3>
-    <p>{{ meal.strArea }} food</p>
-    <div class="flex">
-      <youtube-btn :href="meal.strYoutube" />
+    <div class="bg-white rounded-b-2xl">
+      <div class="flex justify-between">
+        <div class="ml-[23px]">
+          <h3 class="text-[32px] font-semibold">{{ meal.strMeal }}</h3>
+          <router-link :to="{ name: 'mealDetails', params: { id: meal.idMeal } }">
+            <p class="hover:underline text-[#F79F1A]">View recipe</p>
+          </router-link>
+        </div>
+        <div class="flex items-center mr-[23px]">
+          <youtube-btn :href="meal.strYoutube" />
+        </div>
+      </div>
     </div>
   </div>
 </template>

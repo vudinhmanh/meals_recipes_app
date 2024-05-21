@@ -6,15 +6,14 @@
       </router-link>
     </div>
   </div>
-  <div>
-    {{ meals }}
-  </div>
+  <meals :meals="meals"/>
 </template>
 <script setup>
 import { onMounted, ref, watch } from 'vue';
 import { computed } from 'vue';
 import store from '@/store';
 import { useRoute } from 'vue-router';
+import Meals from '@/components/Meals.vue';
 const route = useRoute();
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const meals = computed(() => store.state.mealsByLetter);

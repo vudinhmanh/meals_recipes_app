@@ -6,7 +6,8 @@
       v-model="key"
       @change="searchMeals"
       class="rounded border-2 w-full" 
-      placeholder="Search for Meals" />
+      placeholder="Search for Meals" 
+      />
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <meal-item v-for="meal in meals" :key="meal.idMeal" v-bind:meal="meal"/>

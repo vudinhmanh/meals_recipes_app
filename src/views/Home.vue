@@ -8,10 +8,11 @@
       <div class="w-[424px] mt-[37px]">
         <p class="text-sm">Discover more than <span class="text-[#F79F1A]">10,000 recipes</span> in your hand
           with the best recipe. Help you to find the easiest way to cook.</p>
-        <button class="px-[44px] py-[30px] rounded-xl bg-[#F79F1A] mt-[61px] text-white">
-          Explore Recipes
-        </button>
-
+        <router-link :to="{ name: 'AllIngredient' }">
+          <button class="px-[44px] py-[30px] rounded-xl bg-[#F79F1A] mt-[61px] text-white hover:text-white">
+            Explore Recipes
+          </button>
+        </router-link>
       </div>
     </div>
     <div class>
@@ -64,7 +65,6 @@
                 <path stroke-linecap="round" stroke-linejoin="round"
                   d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
               </svg>
-
             </div>
           </div>
         </div>
@@ -121,8 +121,8 @@
       </div>
     </div>
   </div>
-  <div class="relative">
-    <img src="../assets/img/about.png" alt="">
+  <div class="relative m-auto h-full w-full max-w[1440px]">
+    <img src="../assets/img/about.png" alt="" class="w-full">
     <div class="w-[578px]  bg-white px-10 pt-12 pb-10 absolute top-[85px] right-[182px] rounded-lg">
       <p class="font-semibold text-[46px]">About Us</p>
       <p>Our recipes are the heart and soul of our culinary community, and they reflect our commitment to
@@ -134,10 +134,54 @@
         That Easy To Do!</p>
     </div>
   </div>
+  <div class="mt-6">
+    <div class="flex justify-between items-center mb-6">
+      <div>
+        <h2 class="text-[46px] font-semibold">Discover, Create, Share</h2>
+        <p class="text-[24px]">Check our most popular recipes of this week</p>
+      </div>
+      <div>
+        <router-link :to="{ name: 'byName' }">
+          <button class="bg-[#F79F1A] px-5 py-2 text-white rounded-xl">See All</button>
+        </router-link>
+      </div>
+    </div>
+    <meals :meals="meals" />
+  </div>
+
+  <div class="bg-[#046E1B] w-full max-w-[1440px] h-[350px] rounded-xl mt-8">
+    <div class="flex items-center justify-around">
+      <div class="w-full max-w-[787px]">
+        <h2 class="text-[46px] font-semibold text-white">Embrace the joy of cooking with get it on your iPhone or
+          Android Your kitchen adventure begins now!</h2>
+          <div class="flex gap-[39px] mt-4">
+            <a href="#" class="py-[16px] px-[50px] bg-[#F76631] rounded-xl">
+            App Store
+          </a>
+          <a href="#" class="py-[16px] px-[50px] bg-[#F76631] rounded-xl">
+            Google Play
+          </a>
+          </div>
+      </div>
+      <div class>
+        <img src="../assets/img/iphone.png" alt="" class="object-cover">
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
-
+import axiosClient from '@/axiosClient';
+import { onMounted } from 'vue';
+import store from '@/store';
+import { ref } from 'vue';
+import Meals from '@/components/Meals.vue';
+const meals = ref([])
+onMounted(async () => {
+  for (let i = 0; i < 9; i++) {
+    axiosClient.get('random.php').then(({ data }) => meals.value.push(data.meals[0]));
+  }
+})
 </script>
 
 <style></style>
