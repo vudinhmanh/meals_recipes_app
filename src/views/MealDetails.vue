@@ -1,15 +1,45 @@
 <template>
-    <div >
-        <h1>{{ meal.strMeal }}</h1>
-        <img :src="meal.strMealThumb" alt="">
-        <p>{{ meal.strInstructions }}</p>
+  <div class="mt-6">
+    <h2 class="text-5xl font-bold">{{ meal.strMeal }}</h2>
+    <div class=" mt-6 flex justify-between">
+      <p class="text-[18px]">{{ meal.strInstructions }}</p>
+      <img :src="meal.strMealThumb" alt="" class="w-full max-w-[300px] h-full object-cover">
     </div>
-</template> 
+    <div class="flex gap-20">
+      <div>
+        <h2 class="font-bold text-[36px] text-[#008800]">Ingredients</h2>
+        <ul>
+          <template v-for="(el, ind) of new Array(20)">
+            <li v-if="meal[`strIngredient${ind + 1}`]" class="text-[24px]">
+              {{ ind + 1 }}. {{ meal[`strIngredient${ind + 1}`] }}
+            </li>
+          </template>
+        </ul>
+      </div>
+      <div>
+        <h2 class="font-bold text-[36px] text-[#008800]">Measure</h2>
+        <ul>
+          <template v-for="(el, ind) of new Array(20)">
+            <li v-if="meal[`strMeasure${ind + 1}`]" class="text-[24px]">
+              {{ meal[`strMeasure${ind + 1}`] }}
+            </li>
+          </template>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-6 flex gap-5 items-center">
+      <youtube-btn :href="meal.strYoutube"/>
+      <a :href="meal.strSource">View Original Source</a>
+    </div>
+  </div>
+</template>
 
 <script setup>
 import axiosClient from '@/axiosClient';
-import { onMounted, ref} from 'vue';
+import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
+import YoutubeBtn from '@/components/YoutubeBtn.vue';
+
 const meal = ref({
 
 });
@@ -22,6 +52,4 @@ onMounted(() => {
 })
 </script>
 
-<style>
-
-</style>
+<style></style>

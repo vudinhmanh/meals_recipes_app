@@ -1,19 +1,13 @@
 <template>
-    <a 
-    :href="href" 
-    target="_blank" 
-    class="px-2 py-2 bg-red-400 rounded-md"
-    >
+  <a :href="href" target="_blank" class="px-2 py-2 bg-red-400 rounded-md hover:bg-red-300">
     Youtube
-    </a>
+  </a>
 </template>
 
 <script setup>
 const props = defineProps({
-    href: String
+  href: String
 })
-</script >
+</script>
 
-<style>
-
-</style>
+<style></style>
