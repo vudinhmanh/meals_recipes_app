@@ -1,6 +1,6 @@
 <template>
   <div class="mt-6">
-    <h2 class="uppercase text-4xl mt-6 font-bold">đaáđá</h2>
+    <h2 class="uppercase text-4xl mt-6 font-bold">{{ route.params.category}}</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
       <div v-for="meal in meals" :key="meal.idMeal">
         <div class="bg-[#F9F8F8] hover:scale-105 transition-all rounded-2xl w-full max-w-[400px] h-full">
@@ -22,12 +22,14 @@ const route = useRoute()
 onMounted(() => {
   store.dispatch('searchMealsByCategory', route.params.category)
 })
-const { meal } = defineProps({
+const { meal} = defineProps({
   meal: {
     required: true,
+    default: 0,
     type: Object
   }
 })
+
 </script>
 
 <style></style>

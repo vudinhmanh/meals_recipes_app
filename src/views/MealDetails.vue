@@ -1,11 +1,11 @@
 <template>
-  <div class="mt-6">
+  <div class="mt-6 w-full">
     <h2 class="text-5xl font-bold">{{ meal.strMeal }}</h2>
-    <div class=" mt-6 flex justify-between">
+    <div class="mt-6 flex flex-col lg:flex-row lg:justify-between">
       <p class="text-[18px]">{{ meal.strInstructions }}</p>
-      <img :src="meal.strMealThumb" alt="" class="w-full max-w-[300px] h-full object-cover">
+      <img :src="meal.strMealThumb" alt="" class="w-full lg:max-w-[300px] h-full object-cover">
     </div>
-    <div class="flex gap-20">
+    <div class="flex flex-col lg:flex-row lg:gap-20">
       <div>
         <h2 class="font-bold text-[36px] text-[#008800]">Ingredients</h2>
         <ul>

@@ -3,7 +3,7 @@
     <router-link :to="{ name: 'mealDetails', params: { id: meal.idMeal } }">
       <img :src="meal.strMealThumb" alt="" class="object-cover rounded-t-xl">
     </router-link>
-    <div class="bg-white rounded-b-2xl">
+    <div class=" rounded-b-2xl">
       <div class="flex justify-between">
         <div class="ml-[23px]">
           <h3 class="text-[32px] font-semibold">{{ meal.strMeal }}</h3>

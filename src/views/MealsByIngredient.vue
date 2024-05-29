@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2 class="uppercase text-4xl mt-6 font-bold">{{ route.params.ingredient}}</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6 ">
       <div v-for="meal in meals" :key="meal.idMeal">
         <router-link :to="{name:'mealDetails', params:{id: meal.idMeal}}">
