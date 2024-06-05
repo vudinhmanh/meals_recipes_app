@@ -2,12 +2,12 @@
   <div class="flex flex-col justify-center items-center lg:flex-row lg:justify-between">
     <div class="">
       <div class="lg:max-w-[610px] w-full">
-        <h1 class="text-[40px] lg:mt-[100px] lg:text-[64px] font-bold leading-[80px]">Cooking Made Fun and Easy: Unleash
+        <h1 class="text-[40px] lg:mt-[100px] lg:text-[64px] font-bold leading-[80px] lg:text-left text-center">Cooking Made Fun and Easy: Unleash
           Your
           Inner Chef</h1>
       </div>
       <div class="max-w-[424px] mt-[37px]">
-        <p class="lg:text-sm">Discover more than <span class="text-[#F79F1A]">10,000 recipes</span> in your hand
+        <p class="lg:text-sm lg:m-0 ml-2">Discover more than <span class="text-[#F79F1A]">10,000 recipes</span> in your hand
           with the best recipe. Help you to find the easiest way to cook.</p>
         <router-link :to="{ name: 'AllIngredient' }">
           <button class="px-[44px] py-[30px] rounded-xl bg-[#F79F1A] mt-[61px] text-white hover:text-white">
@@ -21,7 +21,7 @@
         <img src="../assets/img/img-header.png" alt="">
         <div class="flex flex-col gap-y-3">
           <div
-            class="bg-white w-full  lg:max-w-[223px] h-full max-h-[220px] lg:absolute lg:top-[503px] lg:left-[85px] rounded-xl">
+            class="bg-white w-full  lg:max-w-[223px] h-full max-h-[220px] lg:absolute lg:top-[503px] lg:left-[100px] lg:rounded-xl rounded-none">
             <div class="bg-[#F1F3F7] w-[207px] h-[143px] mx-[7px] mt-[7px] rounded-xl">
               <div class="mx-[12px] mt-[17px]">
                 <div class="flex items-center">
@@ -72,7 +72,7 @@
             </div>
           </div>
           <div
-            class="bg-white w-full lg:max-w-[223px] h-full max-h-[220px] lg:absolute lg:top-[391px] lg:right-[230px] rounded-xl">
+            class="bg-white w-full lg:max-w-[223px] h-full max-h-[220px] lg:absolute lg:top-[391px] lg:right-[50px] lg:rounded-xl rounded-none p-2">
             <div class="bg-[#F1F3F7] w-[207px] h-[143px] mx-[7px] mt-[7px] rounded-xl">
               <div class="mx-[12px] mt-[17px]">
                 <div class="flex items-center">
@@ -126,23 +126,23 @@
       </div>
     </div>
   </div>
-  <div class="lg:relative m-auto h-full w-full max-w[1440px]">
+  <div class="lg:relative m-auto h-full w-full max-w[1440px] lg:mt-0">
     <img src="../assets/img/about.png" alt="" class="w-full">
-    <div class="lg:max-w-[578px] w-full bg-white px-10 pt-12 pb-10 lg:absolute lg:top-[85px] lg:right-[182px] rounded-lg items-center">
-      <p class="font-semibold text-[46px]">About Us</p>
+    <div class="lg:max-w-[578px] w-full bg-white px-10 pt-12 pb-10 lg:absolute lg:top-[85px] lg:right-[182px] lg:rounded-lg rounded-none items-center">
+      <p class="font-semibold text-[35px] lg:text-[46px]">About Us</p>
       <p>Our recipes are the heart and soul of our culinary community, and they reflect our commitment to
         providing you with memorable and delightful dining experiences.</p>
       <button class="px-[40px] py-[10px] bg-[#F79F1A] rounded-2xl mt-10">Learn More</button>
     </div>
-    <div class="lg:absolute lg:top-[353px] lg:left-[100px]">
-      <p class="text-[#046E1B] p-[20px] bg-white rounded-lg">50+ Quick Food Recipes
+    <div class="lg:absolute lg:top-[353px] lg:left-[100px] lg:m-0 mt-4">
+      <p class="text-[#046E1B] p-[20px] bg-white lg:rounded-lg rounded-none">50+ Quick Food Recipes
         That Easy To Do!</p>
     </div>
   </div>
   <div class="mt-6">
-    <div class="flex justify-between items-center mb-6">
-      <div>
-        <h2 class="text-[46px] font-semibold">Discover, Create, Share</h2>
+    <div class="flex justify-between items-center mb-6 p-10 lg:p-0">
+      <div class="">
+        <h2 class="text-[35px] lg:text-[46px] font-semibold">Discover, Create, Share</h2>
         <p class="text-[24px]">Check our most popular recipes of this week</p>
       </div>
       <div>
@@ -157,12 +157,13 @@
 
   </div>
 
-  <div class="bg-[#046E1B] w-full max-w-[1440px] rounded-xl mt-8">
-    <div class="flex items-center flex-row justify-between">
-      <div class="w-full max-w-[787px]">
-        <h2 class="text-[20px] lg:text-[46px] font-semibold text-white">Embrace the joy of cooking with get it on your iPhone or
+  <div class="bg-[#046E1B] w-full max-w-[1440px] rounded-xl mt-8 py-3">
+    <div class="flex flex-col-reverse items-center lg:flex-row lg:justify-between">
+      <div class="w-full max-w-[787px] ml-6">
+        <h2 class="text-[20px] lg:text-[30px] font-semibold text-white">
+          Embrace the joy of cooking with get it on your iPhone or
           Android Your kitchen adventure begins now!</h2>
-        <div class="flex gap-[39px] mt-4">
+        <div class="flex justify-evenly lg:gap-[39px] mt-4">
           <a href="#" class="py-[2px] px-[10px] lg:py-[16px] lg:px-[50px] bg-[#F76631] rounded-md">
             App Store
           </a>

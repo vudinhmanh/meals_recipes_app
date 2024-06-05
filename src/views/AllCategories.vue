@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h2 class="uppercase text-4xl mt-6 font-bold">categories</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6 ">
+    <h2 class="uppercase text-4xl mt-6 font-bold text-center">categories</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6 justify-items-center">
       <meal-category v-for="category in allCategories" :key="category.idCategory" :category="category"/>
     </div>
   </div>

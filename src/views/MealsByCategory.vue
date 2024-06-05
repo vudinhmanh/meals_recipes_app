@@ -1,9 +1,9 @@
 <template>
   <div class="mt-6">
-    <h2 class="uppercase text-4xl mt-6 font-bold">{{ route.params.category}}</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
+    <h2 class="uppercase text-4xl mt-6 font-bold text-center">{{ route.params.category}}</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6 justify-items-center">
       <div v-for="meal in meals" :key="meal.idMeal">
-        <div class="bg-[#F9F8F8] hover:scale-105 transition-all rounded-2xl w-full max-w-[400px] h-full">
+        <div class="bg-[#F9F8F8] hover:scale-105 transition-all rounded-2xl w-full max-w-[300px] lg:max-w-[400px] h-full justify-items-center">
           <router-link :to="{name:'mealDetails', params:{id: meal.idMeal}}">
             <img :src="meal.strMealThumb" alt="" class="object-cover">
             <h3 class="bg-[#FFC567] pt-3 pb-3 text-2xl text-center rounded-br-2xl rounded-bl-2xl">{{ meal.strMeal }}</h3>

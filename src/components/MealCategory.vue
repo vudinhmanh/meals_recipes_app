@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#F9F8F8] hover:scale-105 transition-all rounded-2xl">
+  <div class="bg-[#F9F8F8] hover:scale-105 transition-all rounded-2xl lg:max-w-[400px] w-full max-w-[300px]">
     <router-link :to="{ name: 'byCategory', params: { category: category.strCategory } }">
       <img :src="category.strCategoryThumb" alt="" class="mx-auto w-auto">
       <h3 class="bg-[#FFC567] pt-3 pb-3 text-2xl text-center rounded-br-2xl rounded-bl-2xl">
